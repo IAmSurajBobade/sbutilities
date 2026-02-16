@@ -1,9 +1,9 @@
-[submodule "tools/gps"]
-	path = tools/gps
+[submodule "scripts/legacy-tools/gps"]
+	path = scripts/legacy-tools/gps
 	url = https://github.com/IASB-archives/GPS.git
-[submodule "tools/splmcripts"]
-	path = tools/splmcripts
+[submodule "scripts/legacy-tools/splmcripts"]
+	path = scripts/legacy-tools/splmcripts
 	url = https://github.com/IASB-archives/splm_unitscripts.git
-[submodule "tools/csv"]
-	path = tools/csv
+[submodule "scripts/legacy-tools/csv"]
+	path = scripts/legacy-tools/csv
 	url = https://github.com/IASB-archives/go_scripts.git
