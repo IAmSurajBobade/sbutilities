@@ -2,7 +2,7 @@ BINARY_NAME=utils
 BUILD_DIR=bin
 MAIN_PATH=cmd/utils/main.go
 
-.PHONY: all build build-all clean install help
+.PHONY: all build build-all clean install help submodules-init submodules-update
 
 all: build
 
@@ -27,9 +27,19 @@ clean:
 	@echo "Cleaning up..."
 	rm -rf $(BUILD_DIR)
 
+submodules-init:
+	@echo "Initializing submodules..."
+	git submodule update --init --recursive
+
+submodules-update:
+	@echo "Updating submodules to latest..."
+	git submodule update --remote --merge
+
 help:
 	@echo "Available commands:"
-	@echo "  build      - Build binary for current OS"
-	@echo "  build-all  - Build binaries for Linux, Mac (Intel/M1), Windows"
-	@echo "  install    - Install via go install"
-	@echo "  clean      - Remove bin directory"
+	@echo "  build             - Build binary for current OS"
+	@echo "  build-all         - Build binaries for Linux, Mac (Intel/M1), Windows"
+	@echo "  install           - Install via go install"
+	@echo "  clean             - Remove bin directory"
+	@echo "  submodules-init   - Initialize and clone all submodules"
+	@echo "  submodules-update - Update submodules to latest versions"
